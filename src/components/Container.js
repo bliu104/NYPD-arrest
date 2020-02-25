@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import axios from "axios";
 import Crimestats from "./Crimestats";
+import Criminalstats from "./Criminalstats";
 
 class Container extends Component {
   constructor() {
@@ -24,25 +25,25 @@ class Container extends Component {
     // console.log(response.data[0].pd_desc);
   }
 
-  getData = () => {
-    return this.state.crimeData.map(data => {
-      //console.log(data.pd_desc);
-      return (
-        <>
-          {data.pd_desc && (
-            <div>
-              <Crimestats crime={data.pd_desc} />
-              {/* <div>{data.arrest_date}</div>
-          <div>{data.pd_desc}</div>
-          <div>{data.AGE_GROUP}</div>
-          <div>{data.PERP_SEX}</div>
-          <div>{data.PERP_RACE}</div> */}
-            </div>
-          )}
-        </>
-      );
-    });
-  };
+  // getData = () => {
+  //   return this.state.crimeData.map(data => {
+  //     //console.log(data.pd_desc);
+  //     return (
+  //       <>
+  //         {data.pd_desc && (
+  //           <div>
+  //             <Crimestats crime={data.pd_desc} />
+  //             {/* <div>{data.arrest_date}</div>
+  //         <div>{data.pd_desc}</div>
+  //         <div>{data.AGE_GROUP}</div>
+  //         <div>{data.PERP_SEX}</div>
+  //         <div>{data.PERP_RACE}</div> */}
+  //           </div>
+  //         )}
+  //       </>
+  //     );
+  //   });
+  // };
 
   render() {
     const { isLoaded } = this.state;
@@ -55,7 +56,12 @@ class Container extends Component {
     return (
       <div>
         Arrest For Precinct 105
-        {isLoaded ? <Crimestats crime={this.state.crimeData} /> : null}
+        {isLoaded ? (
+          <>
+            <Crimestats crime={this.state.crimeData} />
+            <Criminalstats criminal={this.state.crimeData} />
+          </>
+        ) : null}
         {/* {this.state.crimeData && this.getData()} */}
       </div>
     );
