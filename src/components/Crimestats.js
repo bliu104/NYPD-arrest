@@ -1,4 +1,5 @@
 import React from "react";
+import Piechart from "./pieChart";
 
 function Crimestats(props) {
   let murder = 0;
@@ -11,6 +12,7 @@ function Crimestats(props) {
   let child = 0;
   let harrassment = 0;
   let weapon = 0;
+
   // console.log(props.crime[0].pd_desc);
   // const crimeStr = props.crime;
   // console.log(crimeStr);
@@ -79,6 +81,60 @@ function Crimestats(props) {
     //   murder++;
     // }
   });
+  const dataset = {
+    labels: [
+      "murder",
+      "assault",
+      "sexual",
+      "vehicle",
+      "drug",
+      "stole",
+      "unknown",
+      "child",
+      "harrassment",
+      "weapon"
+    ],
+    datasets: [
+      {
+        data: [
+          murder,
+          assault,
+          sexual,
+          vehicle,
+          drug,
+          stole,
+          unknown,
+          child,
+          harrassment,
+          weapon
+        ],
+        backgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "blue",
+          "pink",
+          "salmon",
+          "peru",
+          "black",
+          "green",
+          "purples"
+        ],
+        hoverBackgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "blue",
+          "pink",
+          "salmon",
+          "peru",
+          "black",
+          "green",
+          "purples"
+        ]
+      }
+    ]
+  };
 
   return (
     <div>
@@ -102,6 +158,7 @@ function Crimestats(props) {
       Number of Menacing crime: {harrassment}
       <br />
       ETC: {unknown}
+      <Piechart crimedata={dataset} />
     </div>
   );
 }

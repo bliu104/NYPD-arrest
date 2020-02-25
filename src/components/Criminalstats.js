@@ -1,4 +1,7 @@
 import React from "react";
+import Piechart from "./pieChart";
+import HorizontalBarComp from "./HorizontalBar";
+import Polar from "./Polar";
 let male = 0;
 let female = 0;
 
@@ -13,6 +16,7 @@ let youth = 0,
   middle = 0,
   old = 0,
   madOld = 0;
+
 function Criminalstats(props) {
   props.criminal.map((criminalInfo, index) => {
     if (criminalInfo.perp_sex.includes("M")) {
@@ -51,6 +55,54 @@ function Criminalstats(props) {
       madOld++;
     }
   });
+  const data = {
+    datasets: [
+      {
+        data: [black, white, asian, hispanic, native_american, other],
+        backgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "salmon",
+          "peru",
+          "black"
+        ],
+        hoverBackgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "salmon",
+          "peru",
+          "black"
+        ]
+      }
+    ],
+
+    labels: ["black", "white", "asian", "hispanic", "native_american", "other"]
+  };
+
+  const datagender = {
+    labels: ["male", "female"],
+    datasets: [
+      {
+        label: "Gender Crime",
+        backgroundColor: ["lightblue", "pink"],
+        hoverBackgroundColor: ["blue", "tomato"],
+        data: [male, female]
+      }
+    ]
+  };
+  const Age = {
+    datasets: [
+      {
+        data: [youth, middle, old, madOld],
+        backgroundColor: ["#FF6384", "#4BC0C0", "#FFCE56", "#E7E9ED"],
+        label: "Criminal's Age"
+      }
+    ],
+    labels: ["18-24", "25-44", "45-64", "65+"]
+  };
+
   return (
     <div>
       <div>
@@ -84,6 +136,9 @@ function Criminalstats(props) {
         <br />
         65+: {madOld}
       </div>
+      <Piechart crimedata={data} />
+      <HorizontalBarComp stuffdata={datagender} />
+      <Polar crimedata={Age} />
     </div>
   );
 }
