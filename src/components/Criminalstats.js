@@ -2,22 +2,23 @@ import React from "react";
 import Piechart from "./pieChart";
 import HorizontalBarComp from "./HorizontalBar";
 import Polar from "./Polar";
-let male = 0;
-let female = 0;
-
-let black = 0,
-  asian = 0,
-  white = 0,
-  hispanic = 0,
-  native_american = 0,
-  other = 0;
-
-let youth = 0,
-  middle = 0,
-  old = 0,
-  madOld = 0;
 
 function Criminalstats(props) {
+  let male = 0;
+  let female = 0;
+
+  let black = 0,
+    asian = 0,
+    white = 0,
+    hispanic = 0,
+    native_american = 0,
+    other = 0;
+
+  let youth = 0,
+    middle = 0,
+    old = 0,
+    madOld = 0;
+
   props.criminal.map((criminalInfo, index) => {
     if (criminalInfo.perp_sex.includes("M")) {
       male++;

@@ -4,26 +4,47 @@ import axios from "axios";
 import Crimestats from "./Crimestats";
 import Criminalstats from "./Criminalstats";
 
+import { Link } from "react-router-dom";
+
 class Container extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       crimeData: [],
-      isLoaded: false
+      isLoaded: false,
+      pID: ""
     };
+    this.handleChange = this.handleChange.bind(this);
   }
-  async componentDidMount() {
-    const response = await axios.get(
-      "https://data.cityofnewyork.us/resource/uip8-fykc.json?arrest_precinct=105"
-    );
 
-    this.setState({
-      crimeData: response.data,
-      isLoaded: true
-    });
+  async handleChange(event) {
+    const value = event.target.value;
+    console.log(value);
+    if (event.key === "Enter") {
+      this.setState({ pID: value });
 
-    // console.log(response.data[0].pd_desc);
+      const response = await axios.get(
+        `https://data.cityofnewyork.us/resource/uip8-fykc.json?arrest_precinct=${this.state.pID}`
+      );
+
+      this.setState({
+        crimeData: response.data,
+        isLoaded: true
+      });
+    }
   }
+  // async componentDidMount() {
+  //   const response = await axios.get(
+  //     `https://data.cityofnewyork.us/resource/uip8-fykc.json?arrest_precinct=${this.state.pID}`
+  //   );
+
+  //   this.setState({
+  //     crimeData: response.data,
+  //     isLoaded: true
+  //   });
+
+  //   // console.log(response.data[0].pd_desc);
+  // }
 
   // getData = () => {
   //   return this.state.crimeData.map(data => {
@@ -47,7 +68,7 @@ class Container extends Component {
 
   render() {
     const { isLoaded } = this.state;
-    console.log(isLoaded);
+    //console.log(isLoaded);
     // const arr = this.state.crimeData.map((crime, index) => {
     //   return <Crimestats crime={crime} />;
     //   // crimeInfo = {crime[index]['pd_desc']}
@@ -55,9 +76,14 @@ class Container extends Component {
 
     return (
       <div>
-        Arrest For Precinct 105
+        Arrest For Precinct {this.state.pID}
+        <br />
+        <input onKeyPress={this.handleChange} />
         {isLoaded ? (
           <>
+            <Link to={`Container/:${this.state.pID}`}>
+              {/* <div key={planet.id}>{planet.name}</div> */}
+            </Link>
             <Crimestats crime={this.state.crimeData} />
             <Criminalstats criminal={this.state.crimeData} />
           </>
