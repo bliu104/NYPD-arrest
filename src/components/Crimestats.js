@@ -138,27 +138,31 @@ function Crimestats(props) {
 
   return (
     <div>
-      {stuff}
-      Numbers of Murders: {murder}
-      <br />
-      Numbers of Assaults: {assault}
-      <br />
-      Number of Sexual crimes: {sexual}
-      <br />
-      Number of Vehicle crime: {vehicle}
-      <br />
-      Number of Drugs crime: {drug}
-      <br />
-      Number of stealy crime: {stole}
-      <br />
-      Number of Weapon crime: {weapon}
-      <br />
-      Number of Child related crime: {child}
-      <br />
-      Number of Menacing crime: {harrassment}
-      <br />
-      ETC: {unknown}
-      <Piechart crimedata={dataset} />
+      <div className="crimes">
+        {stuff}
+        Numbers of Murders: {murder}
+        <br />
+        Numbers of Assaults: {assault}
+        <br />
+        Number of Sexual crimes: {sexual}
+        <br />
+        Number of Vehicle crime: {vehicle}
+        <br />
+        Number of Drugs crime: {drug}
+        <br />
+        Number of stealy crime: {stole}
+        <br />
+        Number of Weapon crime: {weapon}
+        <br />
+        Number of Child related crime: {child}
+        <br />
+        Number of Menacing crime: {harrassment}
+        <br />
+        ETC: {unknown}
+        <div className="piechart1">
+          <Piechart crimedata={dataset} />
+        </div>
+      </div>
     </div>
   );
 }

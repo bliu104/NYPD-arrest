@@ -3,22 +3,14 @@ import "./App.css";
 import Container from "./components/Container";
 import Precinctdetails from "./components/Precinctdetails";
 import { Route, Switch } from "react-router-dom";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      {/* <Container /> */}
+      <Header />
 
-      <main>
-        <Switch>
-          <Route exact path={"/"} component={Container} />
-          <Route
-            exact
-            path={"/Container/:arrest_precinct"}
-            component={Precinctdetails}
-          />
-        </Switch>
-      </main>
+      <Container className="containerClass" />
     </div>
   );
 }

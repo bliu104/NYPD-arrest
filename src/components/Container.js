@@ -12,27 +12,50 @@ class Container extends Component {
     this.state = {
       crimeData: [],
       isLoaded: false,
-      pID: ""
+      isLoading: false,
+      pID: "105"
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   async handleChange(event) {
     const value = event.target.value;
-    console.log(value);
-    if (event.key === "Enter") {
-      this.setState({ pID: value });
+    this.setState({ pID: value });
 
-      const response = await axios.get(
-        `https://data.cityofnewyork.us/resource/uip8-fykc.json?arrest_precinct=${this.state.pID}`
-      );
+    // console.log(value);
 
-      this.setState({
-        crimeData: response.data,
-        isLoaded: true
-      });
-    }
+    // if (event.key === "Enter") {
+    //   if (this.setState.pID === value) {
+    //     console.log("error bitch");
+    //   } else {
+    //     this.setState({ pID: value });
+
+    //     const response = await axios.get(
+    //       `https://data.cityofnewyork.us/resource/uip8-fykc.json?arrest_precinct=${this.state.pID}`
+    //     );
+
+    //     this.setState({
+    //       crimeData: response.data,
+    //       isLoaded: true
+    //     });
+    //   }
+    // }
   }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+    console.log("submitting");
+    const response = await axios.get(
+      `https://data.cityofnewyork.us/resource/uip8-fykc.json?arrest_precinct=${this.state.pID}`
+    );
+
+    this.setState({
+      crimeData: response.data,
+      isLoaded: true
+    });
+  }
+
   // async componentDidMount() {
   //   const response = await axios.get(
   //     `https://data.cityofnewyork.us/resource/uip8-fykc.json?arrest_precinct=${this.state.pID}`
@@ -74,18 +97,20 @@ class Container extends Component {
     //   // crimeInfo = {crime[index]['pd_desc']}
     // });
 
+    console.log(this.state.crimeData);
     return (
-      <div>
+      <div className="search">
         Arrest For Precinct {this.state.pID}
         <br />
-        <input onKeyPress={this.handleChange} />
+        <form onSubmit={this.handleSubmit}>
+          <input onKeyPress={this.handleChange} />
+        </form>
         {isLoaded ? (
           <>
-            <Link to={`Container/:${this.state.pID}`}>
-              {/* <div key={planet.id}>{planet.name}</div> */}
-            </Link>
-            <Crimestats crime={this.state.crimeData} />
+            {/* <Link to={`Container/:${this.state.pID}`} /> */}
+
             <Criminalstats criminal={this.state.crimeData} />
+            <Crimestats crime={this.state.crimeData} />
           </>
         ) : null}
         {/* {this.state.crimeData && this.getData()} */}

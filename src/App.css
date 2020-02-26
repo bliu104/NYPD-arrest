@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #b8e3ea;
 }
 
 .App-logo {
@@ -13,7 +16,7 @@
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -21,11 +24,11 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
+  color: black;
+} */
 
 .App-link {
-  color: #61dafb;
+  color: #b8e3ea;
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +37,106 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+html {
+  background-color: #94cdd9;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: #283c59;
+  background-color: #b8e3ea;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 25px;
+}
+
+main {
+  align-content: flex-start;
+}
+.search {
+  background-color: #b8e3ea;
+  text-align: center;
+  width: 75%;
+}
+.Criminal_Gender {
+  border-radius: 30px;
+
+  background-color: white;
+  margin: 10px;
+}
+.criminal_Race {
+  border-radius: 30px;
+
+  background-color: white;
+}
+.Criminal_Age {
+  border-radius: 30px;
+
+  background-color: white;
+  margin: 10px;
+}
+.crimes {
+  border-radius: 30px;
+
+  background-color: white;
+  margin: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+  .piechart1 {
+    width: 65%;
+  }
+  .agechart {
+    width: 65%;
+  }
+  .pieChart2 {
+    width: 65%;
+  }
+  .genderData {
+    width: 65%;
+  }
+  .Criminal_Gender {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    border-radius: 30px;
+    width: 90%;
+    background-color: rgb(216, 216, 216);
+    margin: 10px;
+    padding-bottom: 20px;
+  }
+  .criminal_Race {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    border-radius: 30px;
+    width: 90%;
+    background-color: rgb(216, 216, 216);
+    margin: 10px;
+    padding-bottom: 20px;
+  }
+  .Criminal_Age {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    border-radius: 30px;
+    width: 90%;
+    background-color: rgb(216, 216, 216);
+    margin: 10px;
+    padding-bottom: 20px;
+  }
+  .crimes {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    border-radius: 30px;
+    width: 90%;
+    background-color: rgb(216, 216, 216);
+    margin: 10px;
+    padding-bottom: 20px;
   }
 }

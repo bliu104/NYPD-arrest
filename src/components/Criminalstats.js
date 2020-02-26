@@ -106,15 +106,21 @@ function Criminalstats(props) {
 
   return (
     <div>
-      <div>
-        Criminal Gender
+      <div className="Criminal_Gender">
+        Gender
         <br />
         <br />
         Male:{male}
         <br />
         Female:{female}
+        <div className="genderData">
+          <HorizontalBarComp stuffdata={datagender} />
+        </div>
       </div>
-      <div>
+      <div className="criminal_Race">
+        <div className="pieChart2">
+          <Piechart crimedata={data} />
+        </div>
         Criminal race <br /> Black: {black}
         <br />
         White:{white} <br />
@@ -126,7 +132,7 @@ function Criminalstats(props) {
         <br />
         Other: {other}
       </div>
-      <div>
+      <div className="Criminal_Age">
         Criminal Age
         <br />
         18-24: {youth}
@@ -136,10 +142,10 @@ function Criminalstats(props) {
         45-64: {old}
         <br />
         65+: {madOld}
+        <div className="agechart">
+          <Polar crimedata={Age} />
+        </div>
       </div>
-      <Piechart crimedata={data} />
-      <HorizontalBarComp stuffdata={datagender} />
-      <Polar crimedata={Age} />
     </div>
   );
 }
