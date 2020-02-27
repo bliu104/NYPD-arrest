@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #b8e3ea;
+  background-color: #94cdd9;
 }
 
 .App-logo {
@@ -48,7 +48,7 @@ h1 {
   justify-content: center;
   font-size: 50px;
   color: #283c59;
-  background-color: #b8e3ea;
+  background-color: #94cdd9;
   text-align: center;
   width: 100%;
   padding-bottom: 25px;
@@ -60,18 +60,19 @@ main {
 .search {
   background-color: #b8e3ea;
   text-align: center;
-  width: 75%;
+  border-radius: 16px;
+  width: 85%;
 }
 .Criminal_Gender {
   border-radius: 30px;
-
+  font-size: 24px;
   background-color: white;
   margin: 10px;
 }
 .criminal_Race {
   border-radius: 30px;
-
   background-color: white;
+  margin: 10px;
 }
 .Criminal_Age {
   border-radius: 30px;
@@ -105,38 +106,82 @@ main {
     justify-content: flex-end;
     border-radius: 30px;
     width: 90%;
-    background-color: rgb(216, 216, 216);
+    background-color: #b8e3ea;
     margin: 10px;
     padding-bottom: 20px;
+  }
+  .outlayer_CG {
+    font-size: 30px;
+    font-weight: 300;
+  }
+  h2 {
+    font-size: 30px;
+    color: #283c59;
+    font-weight: 500;
   }
   .criminal_Race {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-end;
+    justify-content: center;
+    align-content: center;
     border-radius: 30px;
     width: 90%;
-    background-color: rgb(216, 216, 216);
+    background-color: #b8e3ea;
     margin: 10px;
     padding-bottom: 20px;
+    font-size: 24px;
   }
+  /* .names {
+    height: 50%;
+  } */
   .Criminal_Age {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
     border-radius: 30px;
     width: 90%;
-    background-color: rgb(216, 216, 216);
+    background-color: #b8e3ea;
     margin: 10px;
     padding-bottom: 20px;
+    font-size: 24px;
   }
   .crimes {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: flex-end;
     border-radius: 30px;
     width: 90%;
-    background-color: rgb(216, 216, 216);
+    background-color: #b8e3ea;
     margin: 10px;
     padding-bottom: 20px;
+    font-size: 24px;
   }
+}
+
+.man {
+  color: blue;
+}
+.women {
+  color: palevioletred;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+.asian {
+  color: yellow;
+}
+.hispanic {
+  color: brown;
+}
+.native_american {
+  color: purple;
+}
+.other {
+  color: orange;
 }
