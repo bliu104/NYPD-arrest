@@ -1,16 +1,19 @@
-NYPD Infograph
+<h1>NYPD Infograph</h1>
 
-Description:
+<h2>Description:</h2>
 The NYPD Infograph displays data taken from nyc opendata NYPD API to show arrest made in every precinct in new york city. The data is represented with charts, people graphs and number. The data is limited to one thousand arrest per percinct within the year. The data will focus on Gender, Ethncity, Age and the different crime commited. The goal for this infographic is to create easy to read data that will be consumed easily. A list of precinct and a legend is available. A search for precinct is available with dynamic data in order to have a comprehensive information for New York City.
 
-API: https://data.cityofnewyork.us/Public-Safety/NYPD-Arrest-Data-Year-to-Date-/uip8-fykc
+<h2>API: </h2>
+Primary API: https://data.cityofnewyork.us/Public-Safety/NYPD-Arrest-Data-Year-to-Date-/uip8-fykc
 API Documentaion: https://dev.socrata.com/foundry/data.cityofnewyork.us/uip8-fykc
 
-Feature: The infograph will take data from Open Data NYC and display it within a readable fun infograph. The infograph is powered by react. It utilizes routers to simulate multiple pages. With well organized components using class and function methods, that abstract information from the main code. Axios is impliemented to retrieve information from an external API, using react to manipulation. The website is styled will CSS and FlexBox and is somewhat compatiable with mobile, tablets and web broswers.
+<h2>Feature: </h2>
+The infograph will take data from Open Data NYC and display it within a readable fun infograph. The infograph is powered by react. It utilizes routers to simulate multiple pages. With well organized components using class and function methods, that abstract information from the main code. Axios is impliemented to retrieve information from an external API, using react to manipulation. The website is styled will CSS and FlexBox and is somewhat compatiable with mobile, tablets and web broswers.
 
-Additional Features: NYPD Infograph is fully dynamic will functional charts and people graphs.
+<h2>Additional Features: </h2>
+NYPD Infograph is fully dynamic will functional charts and people graphs.
 
-Timeline 
+<h2>Timeline </h2>
 1. Created a React App and imported all the libraries require
   -axios
   -chartjs2
@@ -25,7 +28,7 @@ Timeline
 9. HTML was formatted with flexbox
 10. Webpage was styled with CSS
 
-Additonal Features
+<h2>Additonal Features</h2>
 
 1. People graph was created with dynamic data using a loop to create multiple html tags displaying icons
 
