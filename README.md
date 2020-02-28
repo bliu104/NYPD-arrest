@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NYPD Infograph
 
-## Available Scripts
+Description:
+The NYPD Infograph displays data taken from nyc opendata NYPD API to show arrest made in every precinct in new york city. The data is represented with charts, people graphs and number. The data is limited to one thousand arrest per percinct within the year. The data will focus on Gender, Ethncity, Age and the different crime commited. The goal for this infographic is to create easy to read data that will be consumed easily. A list of precinct and a legend is available. A search for precinct is available with dynamic data in order to have a comprehensive information for New York City.
 
-In the project directory, you can run:
+API: https://data.cityofnewyork.us/Public-Safety/NYPD-Arrest-Data-Year-to-Date-/uip8-fykc
+API Documentaion: https://dev.socrata.com/foundry/data.cityofnewyork.us/uip8-fykc
 
-### `npm start`
+Feature: The infograph will take data from Open Data NYC and display it within a readable fun infograph. The infograph is powered by react. It utilizes routers to simulate multiple pages. With well organized components using class and function methods, that abstract information from the main code. Axios is impliemented to retrieve information from an external API, using react to manipulation. The website is styled will CSS and FlexBox and is somewhat compatiable with mobile, tablets and web broswers.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Additional Features: NYPD Infograph is fully dynamic will functional charts and people graphs.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Timeline 
+1. Created a React App and imported all the libraries require
+  -axios
+  -chartjs2
+  -iconjs
+2. Use axios to import data from the Opendata NYPD API and sort the data into two components: Crimestats.js, Criminalstats.js
+3. The information is passed to the parent component Container.js, that passes the data to the user
+4. Charts were added and placed into individual components for usability, Chartjs2 library was used to create the charts
+5. Componets for Infograph Precinct(Appdetails.js) data and a legends(symbols.js) component was created.
+6. A react router is used to link to the legend and details page
+7. A search bar is added, it is used to search a precinct by number only
+8. Graphs were added and linked to the data that is called
+9. HTML was formatted with flexbox
+10. Webpage was styled with CSS
 
-### `npm test`
+Additonal Features
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. People graph was created with dynamic data using a loop to create multiple html tags displaying icons
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
