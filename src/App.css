@@ -237,30 +237,32 @@ main {
 }
 
 .black {
-  color: black;
+  color: #f66d64;
 }
 
 .white {
-  color: tan;
+  color: #feae85;
 }
 
 .asian {
-  color: yellow;
+  color: #e6f89d;
 }
 .hispanic {
-  color: brown;
+  color: #aadeb7;
 }
 .native_american {
-  color: purple;
+  color: #64c2b6;
 }
 .other {
-  color: orange;
+  color: #2d87db;
 }
 
 li {
   list-style: none;
+  display: flex;
+  justify-content: center;
 }
-ul {
+.symbols {
   padding: 0;
 }
 

@@ -62,20 +62,20 @@ function Criminalstats(props) {
       {
         data: [black, white, asian, hispanic, native_american, other],
         backgroundColor: [
-          "#FF6384",
-          "#36A2EB",
-          "#FFCE56",
-          "salmon",
-          "peru",
-          "black"
+          "#F66D64",
+          "#FEAE85",
+          "#E6F89D",
+          "#AADEB7",
+          "#64C2B6",
+          "#2D87DB"
         ],
         hoverBackgroundColor: [
-          "#FF6384",
-          "#36A2EB",
-          "#FFCE56",
-          "salmon",
-          "peru",
-          "black"
+          "#F66D44",
+          "#FEAE65",
+          "#E6F69D",
+          "#AADEA7",
+          "#64C2A6",
+          "#2D87BB"
         ]
       }
     ],
