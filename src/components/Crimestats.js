@@ -1,6 +1,8 @@
 import React from "react";
 import Piechart from "./pieChart";
-
+import { GiDeathSkull, GiPunch, GiRayGun, GiEvilMinion } from "react-icons/gi";
+import { IoMdPeople } from "react-icons/io";
+import { FaCarAlt, FaPills, FaMoneyBillAlt, FaChild } from "react-icons/fa";
 function Crimestats(props) {
   let murder = 0;
   let assault = 0;
@@ -13,11 +15,7 @@ function Crimestats(props) {
   let harrassment = 0;
   let weapon = 0;
 
-  // console.log(props.crime[0].pd_desc);
-  // const crimeStr = props.crime;
-  // console.log(crimeStr);
-
-  const stuff = props.crime.map((crime, index) => {
+  const stuff = props.crime.map(crime => {
     if (
       crime.pd_desc != null &&
       (crime.pd_desc.includes("ASSAULT") || crime.pd_desc.includes("BREATH"))
@@ -77,9 +75,6 @@ function Crimestats(props) {
     } else {
       unknown++;
     }
-    // if (crime[index].pd_desc.includes("MURDER")) {
-    //   murder++;
-    // }
   });
   const dataset = {
     labels: [
@@ -135,30 +130,79 @@ function Crimestats(props) {
       }
     ]
   };
+  let crimeArr = [];
+
+  const infoGraphCrime = () => {
+    let temp = murder / 10;
+    while (temp > 0) {
+      temp--;
+      crimeArr.push(<GiDeathSkull />);
+    }
+    let temp1 = assault / 10;
+    while (temp1 > 0) {
+      temp1--;
+      crimeArr.push(<GiPunch style={{ color: "red" }} />);
+    }
+    let temp2 = sexual / 10;
+    while (temp2 > 0) {
+      temp2--;
+      crimeArr.push(<IoMdPeople style={{ color: "pink" }} />);
+    }
+    let temp3 = vehicle / 10;
+    while (temp3 > 0) {
+      temp3--;
+      crimeArr.push(<FaCarAlt style={{ color: "brown" }} />);
+    }
+    let temp4 = drug / 10;
+    while (temp4 > 0) {
+      temp4--;
+      crimeArr.push(<FaPills style={{ color: "blue" }} />);
+    }
+    let temp5 = stole / 10;
+    while (temp5 > 0) {
+      temp5--;
+      crimeArr.push(<FaMoneyBillAlt style={{ color: "green" }} />);
+    }
+    let temp6 = weapon / 10;
+    while (temp6 > 0) {
+      temp6--;
+      crimeArr.push(<GiRayGun style={{ color: "purple" }} />);
+    }
+    let temp7 = child / 10;
+    while (temp7 > 0) {
+      temp7--;
+      crimeArr.push(<FaChild style={{ color: "yellow" }} />);
+    }
+    let temp8 = harrassment;
+    while (temp8 > 0) {
+      temp8--;
+      crimeArr.push(<GiEvilMinion style={{ color: "orange" }} />);
+    }
+  };
 
   return (
-    <div>
+    <div className="crimearray">
+      <h2>Crimes Commited In Types</h2>
       <div className="crimes">
         {stuff}
-        Numbers of Murders: {murder}
-        <br />
-        Numbers of Assaults: {assault}
-        <br />
-        Number of Sexual crimes: {sexual}
-        <br />
-        Number of Vehicle crime: {vehicle}
-        <br />
-        Number of Drugs crime: {drug}
-        <br />
-        Number of stealy crime: {stole}
-        <br />
-        Number of Weapon crime: {weapon}
-        <br />
-        Number of Child related crime: {child}
-        <br />
-        Number of Menacing crime: {harrassment}
-        <br />
-        ETC: {unknown}
+        {infoGraphCrime()}
+        <div className="outterLayerCrime">
+          <div className="crimearr">{crimeArr}</div>
+          <div className="crimeNumber">
+            <ul className="crimeList">
+              <li>Murders {murder}</li>
+              <li>Assaults {assault}</li>
+              <li>Sexual Crimes {sexual}</li>
+              <li>Vehicle Crimes {vehicle}</li>
+              <li>Drugs Crimes {drug}</li>
+              <li>Robbery {stole}</li>
+              <li>Weapon Crime {weapon}</li>
+              <li>Child Abuse {child}</li>
+              <li>Menacing {harrassment}</li>
+              <li>Etc {unknown}</li>
+            </ul>
+          </div>
+        </div>
         <div className="piechart1">
           <Piechart crimedata={dataset} />
         </div>
