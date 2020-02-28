@@ -14,19 +14,18 @@ The infograph will take data from Open Data NYC and display it within a readable
 NYPD Infograph is fully dynamic will functional charts and people graphs.
 
 <h2>Timeline </h2>
-1. Created a React App and imported all the libraries require
-  -axios
-  -chartjs2
-  -iconjs
-2. Use axios to import data from the Opendata NYPD API and sort the data into two components: Crimestats.js, Criminalstats.js
-3. The information is passed to the parent component Container.js, that passes the data to the user
-4. Charts were added and placed into individual components for usability, Chartjs2 library was used to create the charts
-5. Componets for Infograph Precinct(Appdetails.js) data and a legends(symbols.js) component was created.
-6. A react router is used to link to the legend and details page
-7. A search bar is added, it is used to search a precinct by number only
-8. Graphs were added and linked to the data that is called
-9. HTML was formatted with flexbox
-10. Webpage was styled with CSS
+<li>1. Created a React App and imported all the libraries require</li>
+ <li> -axios</li>
+  <li>-chartjs2</li>
+  <li>-iconjs</li>
+<li>2. Use axios to import data from the Opendata NYPD API and sort the data into two components: Crimestats.js, Criminalstats.js</li>
+<li>3. The information is passed to the parent component Container.js, that passes the data to the user</li>
+<li>4. Charts were added and placed into individual components for usability, Chartjs2 library was used to create the charts</li>
+<li>5. Componets for Infograph Precinct(Appdetails.js) data and a legends(symbols.js) component was created.</li>
+<li>6. A react router is used to link to the legend and details page</li>
+<li>7. A search bar is added, it is used to search a precinct by number only</li>
+<li>8. Graphs were added and linked to the data that is called</li>
+<li>10. Webpage was styled with CSS</li>
 
 <h2>Additonal Features</h2>
 
