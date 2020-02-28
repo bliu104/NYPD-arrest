@@ -102,32 +102,32 @@ function Criminalstats(props) {
   let arrother = [];
 
   const peopleRace = () => {
-    let temp = black / 50;
+    let temp = black / 10;
     while (temp > 0) {
       temp--;
       arrblack.push(<IoIosMan className="black" />);
     }
-    let temp2 = white / 50;
+    let temp2 = white / 10;
     while (temp2 > 0) {
       temp2--;
       arrwhite.push(<IoIosMan className="white" />);
     }
-    let temp3 = asian / 50;
+    let temp3 = asian / 10;
     while (temp3 > 0) {
       temp3--;
       arrasian.push(<IoIosMan className="asian" />);
     }
-    let temp4 = hispanic / 50;
+    let temp4 = hispanic / 10;
     while (temp4 > 0) {
       temp4--;
       arrhispanic.push(<IoIosMan className="hispanic" />);
     }
-    let temp5 = native_american / 50;
+    let temp5 = native_american / 10;
     while (temp5 > 0) {
       temp5--;
       arrnativeAmerican.push(<IoIosMan className="native_american" />);
     }
-    let temp6 = other / 50;
+    let temp6 = other / 10;
     while (temp6 > 0) {
       temp6--;
       arrother.push(<IoIosMan className="other" />);
@@ -138,12 +138,12 @@ function Criminalstats(props) {
   let arr2 = [];
 
   const peopleGeneration = () => {
-    let temp = male / 50;
+    let temp = male / 25;
     while (temp > 0) {
       temp--;
       arr.push(<IoIosMan className="man" />);
     }
-    let temp2 = female / 50;
+    let temp2 = female / 25;
     while (temp2 > 0) {
       temp2--;
       arr2.push(<IoIosWoman className="women" />);
@@ -155,7 +155,7 @@ function Criminalstats(props) {
       {
         data: [youth, middle, old, madOld],
         backgroundColor: ["#FF6384", "#4BC0C0", "#FFCE56", "#E7E9ED"],
-        label: "Criminal's Age"
+        label: "age"
       }
     ],
     labels: ["18-24", "25-44", "45-64", "65+"]
@@ -165,41 +165,55 @@ function Criminalstats(props) {
     <div>
       {peopleGeneration()}
       {peopleRace()}
-
+      <h2>Crimes Commited by Gender</h2>
       <div className="outlayer_CG">
-        <h2>Crimes Commited by Gender</h2>
         <div className="Criminal_Gender">
-          Gender
-          {arr}
-          {arr2}
+          <div className="genderInfo">
+            <div className="genderArr">
+              {arr}
+              {arr2}
+            </div>
+            <div className="genderstats">
+              Numbers of Arrests by Gender:
+              <br />
+              Male: {male}
+              <br />
+              Female: {female}
+            </div>
+          </div>
           <div className="genderData">
             <HorizontalBarComp stuffdata={datagender} />
           </div>
         </div>
       </div>
+      <h2>Crimes Commited By Ethncity</h2>
       <div className="criminal_Race">
         <div className="pieChart2">
           <Piechart crimedata={data} />
         </div>
         <div className="names">
-          {arrblack}
-          {arrwhite}
-          {arrasian}
-          {arrhispanic}
-          {arrnativeAmerican}
-          {arrother}
-          Criminal race <br /> Black: {black}
-          <br />
-          White:{white} <br />
-          Hispanic:{hispanic}
-          <br />
-          Asian:{asian}
-          <br />
-          Native American: {native_american}
-          <br />
-          Other: {other}
+          <div className="raceArr">
+            <ul>
+              {arrblack}
+              {arrwhite}
+              {arrasian}
+              {arrhispanic}
+              {arrnativeAmerican}
+              {arrother}
+            </ul>
+          </div>
+          Number of Arrest By Ethncity
+          <ul className="raceList">
+            <li>Black: {black}</li>
+            <li>White:{white}</li>
+            <li>Hispanic:{hispanic}</li>
+            <li>Asian:{asian}</li>
+            <li>Native American: {native_american}</li>
+            <li>Other: {other}</li>
+          </ul>
         </div>
       </div>
+      <h2>Crimes Commited By Age</h2>
       <div className="Criminal_Age">
         Criminal Age
         <br />

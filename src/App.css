@@ -16,17 +16,6 @@
   }
 }
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
-} */
-
 .App-link {
   color: #b8e3ea;
 }
@@ -42,6 +31,8 @@
 
 html {
   background-color: #94cdd9;
+  font-weight: 300;
+  font-size: 16px;
 }
 h1 {
   display: flex;
@@ -51,17 +42,19 @@ h1 {
   background-color: #94cdd9;
   text-align: center;
   width: 100%;
-  padding-bottom: 25px;
 }
 
 main {
   align-content: flex-start;
+  width: 100%;
 }
 .search {
   background-color: #b8e3ea;
   text-align: center;
   border-radius: 16px;
-  width: 85%;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
 }
 .Criminal_Gender {
   border-radius: 30px;
@@ -69,16 +62,18 @@ main {
   background-color: white;
   margin: 10px;
 }
+.crimeNumber {
+  width: 100%;
+}
 .criminal_Race {
   border-radius: 30px;
   background-color: white;
-  margin: 10px;
+  margin: auto;
 }
 .Criminal_Age {
   border-radius: 30px;
-
+  margin-left: 30px;
   background-color: white;
-  margin: 10px;
 }
 .crimes {
   border-radius: 30px;
@@ -86,10 +81,23 @@ main {
   background-color: white;
   margin: 10px;
 }
-
+@media only screen and (max-width: 580px) {
+  .genderArr {
+    width: 100%;
+    height: auto;
+    padding-top: 12px;
+  }
+  .genderstats {
+    text-emphasis: center;
+    width: 100%;
+  }
+  .crimearr {
+    padding: 12px;
+  }
+}
 @media only screen and (min-width: 600px) {
   .piechart1 {
-    width: 65%;
+    width: 70%;
   }
   .agechart {
     width: 65%;
@@ -98,7 +106,7 @@ main {
     width: 65%;
   }
   .genderData {
-    width: 65%;
+    width: 100%;
   }
   .Criminal_Gender {
     display: flex;
@@ -113,6 +121,10 @@ main {
   .outlayer_CG {
     font-size: 30px;
     font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+    margin: auto;
   }
   h2 {
     font-size: 30px;
@@ -127,13 +139,11 @@ main {
     border-radius: 30px;
     width: 90%;
     background-color: #b8e3ea;
-    margin: 10px;
+    margin: auto;
     padding-bottom: 20px;
     font-size: 24px;
   }
-  /* .names {
-    height: 50%;
-  } */
+
   .Criminal_Age {
     display: flex;
     flex-direction: row-reverse;
@@ -156,8 +166,69 @@ main {
     padding-bottom: 20px;
     font-size: 24px;
   }
-}
+  .genderArr {
+    width: 75%;
+    height: 50%;
+  }
+  .genderstats {
+    height: 60%;
+    width: 70%;
+  }
 
+  .crimearr {
+    display: flex;
+
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+
+    justify-content: space-evenly;
+  }
+  .crimearray {
+    height: 30%;
+    margin-left: 60px;
+  }
+  .crimeList {
+    list-style: none;
+    column-count: 2;
+  }
+  .outterLayerCrime {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .genderInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .raceArr {
+    width: 95%;
+  }
+
+  .names {
+    width: 50%;
+  }
+  .raceList {
+    list-style: none;
+    column-count: 2;
+  }
+
+  .listOfPrecinct {
+    background-color: #b8e3ea;
+    text-align: center;
+    border-radius: 16px;
+    font-size: large;
+  }
+  .symbols {
+    display: flex;
+    font-size: 50px;
+    flex-direction: column;
+    list-style: none;
+  }
+}
 .man {
   color: blue;
 }
@@ -170,7 +241,7 @@ main {
 }
 
 .white {
-  color: white;
+  color: tan;
 }
 
 .asian {
@@ -184,4 +255,22 @@ main {
 }
 .other {
   color: orange;
+}
+
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+
+input {
+  border-radius: 8px;
+  width: 30em;
+  height: 2em;
+}
+
+nav {
+  text-align: center;
+  padding: 10px;
 }

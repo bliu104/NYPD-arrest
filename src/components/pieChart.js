@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Pie } from "react-chartjs-2";
 
 function pieChart(props) {
@@ -6,7 +6,6 @@ function pieChart(props) {
 
   return (
     <div>
-      <h2>Crime</h2>
       <Pie data={data} />
     </div>
   );
