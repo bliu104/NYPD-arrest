@@ -84,7 +84,6 @@ function Crimestats(props) {
       "vehicle",
       "drug",
       "stole",
-      "unknown",
       "child",
       "harrassment",
       "weapon"
@@ -98,21 +97,19 @@ function Crimestats(props) {
           vehicle,
           drug,
           stole,
-          unknown,
           child,
           harrassment,
           weapon
         ],
         backgroundColor: [
-          "#FF6384",
-          "#36A2EB",
-          "#FFCE56",
-          "blue",
-          "pink",
-          "salmon",
-          "peru",
           "black",
+          "red",
+          "pink",
+          "brown",
+          "blue",
           "green",
+          "yellow",
+          "orange",
           "purples"
         ],
         hoverBackgroundColor: [
@@ -120,7 +117,6 @@ function Crimestats(props) {
           "#36A2EB",
           "#FFCE56",
           "blue",
-          "pink",
           "salmon",
           "peru",
           "black",
@@ -173,7 +169,7 @@ function Crimestats(props) {
       temp7--;
       crimeArr.push(<FaChild style={{ color: "yellow" }} />);
     }
-    let temp8 = harrassment;
+    let temp8 = harrassment / 10;
     while (temp8 > 0) {
       temp8--;
       crimeArr.push(<GiEvilMinion style={{ color: "orange" }} />);
