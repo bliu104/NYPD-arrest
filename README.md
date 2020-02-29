@@ -31,4 +31,9 @@ NYPD Infograph is fully dynamic will functional charts and people graphs.
 
 1. People graph was created with dynamic data using a loop to create multiple html tags displaying icons
 
+<h2>Additional Information</h2>
+
+The wireframe and heiarchy order is in a separate folder called wireframe/heiarchy
+Website: https://nypdinfographga.netlify.com/
+
 
