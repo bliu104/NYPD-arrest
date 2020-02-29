@@ -33,7 +33,7 @@ NYPD Infograph is fully dynamic will functional charts and people graphs.
 
 <h2>Additional Information</h2>
 
-The wireframe and heiarchy order is in a separate folder called wireframe/heiarchy
+The wireframe and heiarchy order is in a separate folder called wireframe/heiarchy <br/>
 Website: https://nypdinfographga.netlify.com/
 
 
